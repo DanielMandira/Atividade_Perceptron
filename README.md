@@ -1,118 +1,177 @@
-# Atividade Perceptron - Detecção de Ferramentas de Material de Construção
+# Sistema de Classificação de Ferramentas com Perceptron
 
-## 📋 Sobre o Projeto
+## Descrição do Projeto
 
-Este repositório foi criado para a atividade acadêmica da disciplina de **Redes Neurais** da **FATEC de Registro**, com foco na implementação de um perceptron para detecção e classificação de ferramentas de material de construção.
+Este projeto implementa um sistema de classificação binária usando o algoritmo Perceptron para identificar se um item é uma ferramenta ou não, baseado em suas características físicas e funcionais. A implementação é feita completamente do zero, sem uso de bibliotecas de machine learning externas.
 
-## 🎯 Objetivo
+## Características do Dataset
 
-O objetivo principal desta atividade é aplicar os conceitos teóricos de redes neurais artificiais, especificamente o modelo do perceptron, para resolver um problema prático de classificação de imagens de ferramentas utilizadas na construção civil.
+O dataset contém informações sobre diversos itens, incluindo ferramentas e objetos não-ferramentas, com os seguintes atributos:
 
-## 🔧 Ferramentas a serem Detectadas
+### Atributos de Entrada (Features):
+1. **peso_gramas**: Peso do item em gramas (numérico)
+2. **dureza_escala_1_10**: Dureza do material na escala de 1 a 10 (numérico)
+3. **tamanho_cm**: Tamanho do item em centímetros (numérico)
+4. **tem_cabo**: Se o item possui cabo (binário: 1=Sim, 0=Não)
+5. **material_metalico**: Se o item é feito de material metálico (binário: 1=Sim, 0=Não)
 
-O sistema será treinado para identificar diferentes tipos de ferramentas de construção, tais como:
-- Martelos
-- Chaves de fenda
-- Alicates
-- Furadeiras
-- Serras
-- Níveis
-- Trenas
-- E outras ferramentas comuns na construção civil
+### Atributos Informativos:
+- **nome_item**: Nome descritivo do item
+- **preco_reais**: Preço do item em reais
+- **funcao**: Descrição da função/uso do item
 
-## 🧠 Conceitos Aplicados
+### Atributo Alvo:
+- **eh_ferramenta**: Classificação binária (1=Ferramenta, 0=Não-ferramenta)
 
-### Perceptron
-O perceptron é o modelo mais simples de rede neural artificial, sendo a base para o entendimento de redes mais complexas. Neste projeto, utilizamos:
+## Estrutura dos Arquivos
 
-- **Função de ativação**: Para determinar se um neurônio deve ser ativado
-- **Pesos sinápticos**: Para ajustar a importância de cada entrada
-- **Algoritmo de aprendizado**: Para treinar o modelo com exemplos
-- **Classificação binária/multiclasse**: Para categorizar as ferramentas
+```
+perceptron/
+├── dataset_ferramentas.csv    # Dataset de treinamento (30 amostras)
+├── dataset_teste.csv          # Dataset de teste (10 amostras)
+├── perceptron.py              # Implementação principal do Perceptron
+└── README.md                  # Este arquivo de documentação
+```
 
-## 📚 Contexto Acadêmico
+## Exemplos do Dataset
 
-**Instituição**: FATEC de Registro (Faculdade de Tecnologia de Registro)  
-**Disciplina**: Redes Neurais  
-**Tipo**: Atividade Prática  
-**Modelo**: Perceptron  
+### Ferramentas (eh_ferramenta = 1):
+- Martelo: 250g, dureza 8, 25cm, tem cabo, metálico
+- Chave de Fenda: 150g, dureza 6, 15cm, tem cabo, metálico
+- Machado: 500g, dureza 9, 35cm, tem cabo, metálico
 
-## 🚀 Como Utilizar
+### Não-Ferramentas (eh_ferramenta = 0):
+- Borracha: 50g, dureza 2, 8cm, sem cabo, não-metálico
+- Papel: 80g, dureza 1, 5cm, sem cabo, não-metálico
+- Livro: 200g, dureza 2, 15cm, sem cabo, não-metálico
 
-1. Clone este repositório:
+## Implementação do Perceptron
+
+### Características da Implementação:
+- **Algoritmo**: Perceptron simples com função de ativação degrau
+- **Taxa de Aprendizado**: 0.1 (configurável)
+- **Função de Ativação**: Degrau unitário (step function)
+- **Normalização**: Dados normalizados para intervalo [0,1]
+- **Critério de Parada**: Convergência (zero erros) ou máximo de iterações
+
+### Fórmulas Utilizadas:
+
+1. **Saída Linear**: 
+   ```
+   y = w₁x₁ + w₂x₂ + w₃x₃ + w₄x₄ + w₅x₅ + bias
+   ```
+
+2. **Função de Ativação**:
+   ```
+   f(y) = 1 se y ≥ 0, caso contrário 0
+   ```
+
+3. **Regra de Atualização dos Pesos**:
+   ```
+   wᵢ = wᵢ + α × erro × xᵢ
+   bias = bias + α × erro
+   ```
+   Onde α é a taxa de aprendizado e erro = (valor_real - predição)
+
+## Como Executar
+
+### Pré-requisitos:
+- Python 3.6 ou superior
+- Nenhuma biblioteca externa necessária (apenas bibliotecas padrão)
+
+### Execução:
 ```bash
-git clone https://github.com/DanielMandira/Atividade_Perceptron.git
+python perceptron.py
 ```
 
-2. Navegue até o diretório do projeto:
-```bash
-cd Atividade_Perceptron
-```
+### Funcionalidades:
+1. **Carregamento automático dos datasets**
+2. **Treinamento do modelo** com visualização do progresso
+3. **Teste automático** com cálculo de acurácia
+4. **Interface interativa** para classificação de novos itens
 
-3. Instale as dependências necessárias:
-```bash
-pip install -r requirements.txt
-```
-
-4. Execute o programa principal:
-```bash
-python main.py
-```
-
-## 📁 Estrutura do Projeto
+## Exemplo de Uso Interativo
 
 ```
-Atividade_Perceptron/
-├── README.md
-├── LICENSE
-├── .gitignore
-├── requirements.txt      # Dependências do projeto
-├── main.py              # Arquivo principal
-├── perceptron.py        # Implementação do perceptron
-├── data/                # Dataset com imagens das ferramentas
-│   ├── training/        # Dados de treinamento
-│   └── testing/         # Dados de teste
-├── models/              # Modelos treinados
-└── utils/               # Funções auxiliares
-    ├── preprocessing.py # Pré-processamento de imagens
-    └── visualization.py # Visualização de resultados
+Digite as características do item para classificação:
+
+Insira as características do item:
+Peso em gramas (ex: 250): 300
+Dureza na escala 1-10 (ex: 8): 7
+Tamanho em cm (ex: 25): 20
+Tem cabo? (1=Sim, 0=Não): 1
+É feito de material metálico? (1=Sim, 0=Não): 1
+
+----------------------------------------
+RESULTADO: É uma FERRAMENTA! 🔧
+----------------------------------------
 ```
 
-## 📊 Dataset
+## Resultados Esperados
 
-O dataset contém imagens de ferramentas de construção organizadas por categoria, permitindo o treinamento supervisionado do perceptron para classificação multiclasse.
+Com o dataset fornecido, o Perceptron deve atingir:
+- **Acurácia de Treinamento**: ~100% (dados linearmente separáveis)
+- **Acurácia de Teste**: 90-100%
+- **Convergência**: Normalmente em 50-200 iterações
 
-## 🎓 Aprendizados Esperados
+## Análise dos Resultados
 
-Ao completar esta atividade, espera-se que os alunos compreendam:
+### Métricas de Avaliação:
+- Acurácia no conjunto de treinamento
+- Acurácia no conjunto de teste
+- Número de iterações até convergência
+- Análise dos pesos finais
 
-- Funcionamento básico de redes neurais
-- Implementação prática do algoritmo perceptron
-- Pré-processamento de dados para machine learning
-- Avaliação de modelos de classificação
-- Aplicação de IA em problemas reais
+### Interpretação dos Pesos:
+- Pesos positivos altos indicam características que favorecem a classificação como ferramenta
+- Pesos negativos indicam características que desfavorecem
+- Magnitude dos pesos indica a importância da característica
 
-## 📈 Métricas de Avaliação
+## Limitações do Modelo
 
-O desempenho do modelo será avaliado através de:
-- Acurácia
-- Precisão
-- Recall
-- F1-Score
-- Matriz de confusão
+1. **Linearidade**: O Perceptron só pode separar dados linearmente separáveis
+2. **Binário**: Apenas classificação binária (ferramenta vs não-ferramenta)
+3. **Sensibilidade**: Sensível à escala dos dados (necessita normalização)
+4. **Simplicidade**: Modelo simples, pode não capturar relações complexas
 
-## 🤝 Contribuições
+## Possíveis Melhorias
 
-Este é um projeto acadêmico desenvolvido como parte do curso de Redes Neurais. Contribuições e sugestões são bem-vindas para fins educacionais.
+1. **Multi-classe**: Extensão para múltiplas categorias de ferramentas
+2. **Validação Cruzada**: Implementar k-fold cross-validation
+3. **Regularização**: Adicionar termos de regularização
+4. **Interface Gráfica**: Desenvolver GUI para melhor usabilidade
+5. **Mais Features**: Adicionar características como cor, marca, etc.
 
-## 📝 Licença
+## Estrutura do Código
 
-Este projeto está licenciado sob a [GNU General Public License v3.0](LICENSE).
+### Classes Principais:
+- `Perceptron`: Implementação do algoritmo de aprendizado
+- Funções auxiliares para carregamento, normalização e interface
 
-## 👨‍🎓 Autor
+### Métodos da Classe Perceptron:
+- `treinar(X, y)`: Treina o modelo com dados fornecidos
+- `prever(X)`: Faz previsões para novas amostras
+- `calcular_acuracia(X, y)`: Calcula acurácia do modelo
 
-Desenvolvido como atividade acadêmica para a disciplina de Redes Neurais na FATEC de Registro.
+## Considerações Técnicas
 
----
+### Normalização:
+Os dados são normalizados para o intervalo [0,1] usando min-max scaling:
+```
+valor_normalizado = (valor - min) / (max - min)
+```
 
-*Este projeto faz parte do currículo acadêmico e tem como objetivo principal o aprendizado prático dos conceitos de redes neurais artificiais.*
+### Inicialização:
+Pesos e bias são inicializados com valores aleatórios pequenos (-0.1 a 0.1) para evitar simetria e garantir aprendizado.
+
+## Aplicações Práticas
+
+Este sistema pode ser aplicado em:
+- **Controle de Estoque**: Classificação automática de itens em lojas
+- **E-commerce**: Categorização de produtos
+- **Inventário Industrial**: Organização de equipamentos
+- **Educação**: Demonstração de conceitos de machine learning
+
+## Conclusão
+
+O projeto demonstra uma implementação completa e educativa do algoritmo Perceptron, mostrando como um modelo simples de machine learning pode resolver problemas de classificação binária de forma efetiva. A implementação sem bibliotecas externas permite compreender completamente o funcionamento interno do algoritmo.
