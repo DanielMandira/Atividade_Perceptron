@@ -1,31 +1,75 @@
 nome_item,peso_gramas,dureza_escala_1_10,tamanho_cm,tem_cabo,material_metalico,preco_reais,cod_funcao,eh_ferramenta
-Martelo,250,8,25,1,1,35.5,1,1
-Chave de Fenda,150,6,15,1,1,12.9,2,1
-Machado,500,9,35,1,1,89.9,3,1
-Marreta,800,7,40,1,1,125.0,1,1
-Alicate,120,8,20,1,1,28.75,2,1
-Serrote,300,9,30,1,1,45.8,3,1
-Furadeira Manual,450,6,25,1,1,78.5,4,1
-Chave Philips,200,8,18,1,1,15.3,2,1
-Lima,350,7,22,1,1,22.4,5,1
-Chave Inglesa,180,9,16,1,1,38.9,2,1
-Serra,600,8,45,1,1,156.0,3,1
-Estilete,95,7,12,1,1,8.75,3,1
-Enxada,750,9,38,1,1,67.2,6,1
-Morsa,320,6,28,1,1,145.0,2,1
-Espatula,280,8,24,1,1,18.6,5,1
-Picareta,420,7,32,1,1,98.3,6,1
-Chave Allen,160,9,14,1,1,25.4,2,1
-Machado Grande,550,8,42,1,1,178.9,3,1
-Formao,220,6,19,1,1,31.2,5,1
-Broca,380,7,26,1,1,42.85,4,1
-Borracha,50,2,8,0,0,2.5,7,0
-Papel,8,1,5,0,0,0.1,7,0
-Clipe Metal,12,2,3,0,1,0.05,8,0
-Livro,200,2,15,0,0,45.0,7,0
-Folha,9,1,7,0,0,0.08,7,0
-Regua Metal,150,4,18,0,1,8.9,8,0
-Esponja,7,2,6,0,0,3.2,9,0
-Lapis,11,3,10,0,0,1.5,7,0
-Revista,18,1,20,0,0,12.9,7,0
+Serrinha,95,7,18,1,1,12.8,3,1
+Copo Vidro,125,2,12,0,0,4.8,9,0
+Trena,245,3,12,0,1,28.9,8,1
+Grampo Metal,95,3,11,0,1,0.15,8,0
+Chave Grifo,190,7,24,1,1,28.4,2,1
+Borracha Branca,35,2,5,0,0,1.2,7,0
+Post-it,25,1,8,0,0,3.8,7,0
 Papel Cartao,60,2,4,0,0,0.25,9,0
+Corretivo,35,2,8,0,0,4.2,7,0
+Esquadro Metal,290,6,25,0,1,42.3,8,1
+Elastico,5,1,1,0,0,0.1,9,0
+Chave Allen,160,9,14,1,1,25.4,2,1
+Parafusadeira,310,8,27,1,1,89.9,2,1
+Chave Canhao,220,8,22,1,1,35.7,2,1
+Martelo Pequeno,260,6,21,1,1,24.9,1,1
+Alicate,120,8,20,1,1,28.75,2,1
+Papel,8,1,5,0,0,0.1,7,0
+Chave Combinada,175,8,19,1,1,24.7,2,1
+Chave Fenda Grande,210,7,25,1,1,19.8,2,1
+Abridor Latas,85,6,15,0,1,7.2,9,0
+Furador Manual,120,6,16,1,1,18.5,4,1
+Algodao,75,2,7,0,0,4.5,9,0
+Cinzel,180,8,20,1,1,29.5,5,1
+Bule Ceramica,450,2,20,1,0,28.9,9,0
+Espatula Silicone,45,2,28,1,0,8.5,9,0
+Liquidificador,1150,4,35,1,0,149.9,9,0
+Colher Sopa,28,4,19,0,1,2.8,9,0
+Caderno,170,1,19,0,0,18.5,7,0
+Pa Jardinagem,650,5,35,1,0,45.2,6,1
+Marcador Texto,18,3,12,0,0,2.1,7,0
+Estilete,95,7,12,1,1,8.75,3,1
+Revista,18,1,20,0,0,12.9,7,0
+Panela Aco Inox,850,4,24,1,1,89.9,9,0
+Giz Cera,35,2,8,0,0,3.2,7,0
+Borracha,50,2,8,0,0,2.5,7,0
+Nivel Bolha,380,4,30,0,1,56.8,8,1
+Assadeira Vidro,950,2,35,0,0,28.7,9,0
+Pasta Arquivo,95,2,32,0,0,12.5,9,0
+Panela Pequena,450,3,18,1,1,32.9,9,0
+Martelo Borracha,320,5,28,1,0,38.9,1,1
+Faca Cozinha,145,7,25,1,1,25.8,9,0
+Furadeira Impacto,680,6,26,1,1,125.8,4,1
+Caneta Esferografica,25,3,14,0,0,2.8,7,0
+Broca,380,7,26,1,1,42.85,4,1
+Esponja,7,2,6,0,0,3.2,9,0
+Grampeador,220,4,16,0,1,15.8,5,0
+Chave Torx,140,7,16,1,1,18.9,2,1
+Berbequim,520,6,28,1,1,89.0,4,1
+Livro,200,2,15,0,0,45.0,7,0
+Talhadeira,390,8,29,1,1,36.7,3,1
+Copo Plastico,85,2,10,0,0,2.5,9,0
+Tigela Vidro,285,2,16,0,0,14.9,9,0
+Serra Tico-Tico,420,7,22,1,1,78.5,3,1
+Escorredor Macarrao,180,3,28,1,1,22.4,9,0
+Marreta,800,7,40,1,1,125.0,1,1
+Furador Couro,85,7,14,1,1,15.6,4,1
+Panela de Pressao,1200,5,25,1,1,125.9,9,0
+Serra,600,8,45,1,1,156.0,3,1
+Garrafa Termica,380,3,25,0,1,35.9,9,0
+Chave Inglesa,180,9,16,1,1,38.9,2,1
+Jarra Plastico,195,2,22,0,0,8.9,9,0
+Fita Adesiva,85,3,8,0,0,3.5,9,0
+Enxada,750,9,38,1,1,67.2,6,1
+Martelo,250,8,25,1,1,35.5,1,1
+Xicara Porcelana,180,2,8,1,0,12.5,9,0
+Saca Rolhas,75,5,12,0,1,14.5,9,0
+Garfo Mesa,35,4,18,0,1,3.5,9,0
+Calculadora,150,4,12,0,0,25.9,9,0
+Frigideira Antiaderente,650,3,26,1,1,45.8,9,0
+Alicate Universal,195,7,19,1,1,28.9,5,1
+Forma de Bolo,380,3,25,0,1,19.8,9,0
+Formao,220,6,19,1,1,31.2,5,1
+Concha Metal,95,4,32,1,1,12.9,9,0
+Chaleira Aluminio,420,3,22,1,1,35.5,9,0

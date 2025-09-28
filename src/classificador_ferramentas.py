@@ -3,6 +3,8 @@
 
 import csv
 import random
+import json
+import datetime
 from typing import List, Tuple, Optional
 
 
@@ -435,6 +437,61 @@ def interface_classificacao_manual(modelo: PerceptronFerramentas) -> None:
             print(f"Erro inesperado: {e}")
 
 
+def salvar_resultados_json(modelo: PerceptronFerramentas, total_treino: int, 
+                          total_teste: int, acuracia_teste: float) -> None:
+    """
+    Salva os resultados do treinamento e avaliação em arquivo JSON.
+    
+    Args:
+        modelo (PerceptronFerramentas): Modelo treinado
+        total_treino (int): Total de registros de treinamento
+        total_teste (int): Total de registros de teste
+        acuracia_teste (float): Acurácia no dataset de teste
+    """
+    try:
+        # Prepara dados para salvar
+        resultados = {
+            "timestamp": datetime.datetime.now().isoformat(),
+            "modelo": {
+                "tipo": "Perceptron ",
+                "taxa_aprendizado": modelo.taxa_aprendizado,
+                "max_iteracoes": modelo.max_iteracoes,
+                "iteracoes_realizadas": len(modelo.historico_treinamento),
+                "convergiu": len(modelo.historico_treinamento) < modelo.max_iteracoes
+            },
+            "dados": {
+                "total_treino": total_treino,
+                "total_teste": total_teste,
+                "caracteristicas_fisicas": 5,
+                "caracteristicas_funcionais": 9,
+                "total_caracteristicas": 14
+            },
+            "performance": {
+                "acuracia_treino_final": modelo.historico_treinamento[-1]['acuracia'] if modelo.historico_treinamento else 0,
+                "acuracia_teste": acuracia_teste,
+                "bias": modelo.bias if modelo.bias else 0
+            },
+            "historico_treinamento": modelo.historico_treinamento,
+            "categorias_funcao": modelo.legenda_funcoes,
+            "pesos_modelo": {
+                "bias": modelo.bias if modelo.bias else 0,
+                "pesos_caracteristicas": modelo.pesos if modelo.pesos else []
+            }
+        }
+        
+        # Salva no arquivo JSON
+        with open('resultados_treinamento.json', 'w', encoding='utf-8') as arquivo:
+            json.dump(resultados, arquivo, indent=2, ensure_ascii=False)
+        
+        print(f"\n💾 RESULTADOS SALVOS EM: resultados_treinamento.json")
+        print(f"📊 Timestamp: {resultados['timestamp']}")
+        print(f"🎯 Acurácia Treino: {resultados['performance']['acuracia_treino_final']:.1f}%")
+        print(f"🧪 Acurácia Teste: {resultados['performance']['acuracia_teste']:.1f}%")
+        
+    except Exception as e:
+        print(f"❌ Erro ao salvar JSON: {e}")
+
+
 def main():
     """Função principal do sistema de classificação de ferramentas."""
     print("="*70)
@@ -465,6 +522,10 @@ def main():
         print("-"* 50)
         acuracia_teste = modelo.avaliar_dataset(dados_teste)
         print(f"\nACURÁCIA NO DATASET DE TESTE: {acuracia_teste:.1f}%")
+    
+    # Salva resultados em JSON
+    salvar_resultados_json(modelo, len(dados_treino), len(dados_teste) if dados_teste else 0, 
+                          acuracia_teste if dados_teste else 0)
     
     # Interface de classificação manual
     interface_classificacao_manual(modelo)

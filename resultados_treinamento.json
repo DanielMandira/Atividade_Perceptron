@@ -1,0 +1,129 @@
+{
+  "timestamp": "2025-09-28T21:33:50.490402",
+  "modelo": {
+    "tipo": "Perceptron ",
+    "taxa_aprendizado": 0.1,
+    "max_iteracoes": 100,
+    "iteracoes_realizadas": 15,
+    "convergiu": true
+  },
+  "dados": {
+    "total_treino": 74,
+    "total_teste": 38,
+    "caracteristicas_fisicas": 5,
+    "caracteristicas_funcionais": 9,
+    "total_caracteristicas": 14
+  },
+  "performance": {
+    "acuracia_treino_final": 100.0,
+    "acuracia_teste": 92.10526315789474,
+    "bias": -0.27941186781202126
+  },
+  "historico_treinamento": [
+    {
+      "iteracao": 1,
+      "erros": 12,
+      "acuracia": 83.78378378378379
+    },
+    {
+      "iteracao": 2,
+      "erros": 5,
+      "acuracia": 93.24324324324324
+    },
+    {
+      "iteracao": 3,
+      "erros": 5,
+      "acuracia": 93.24324324324324
+    },
+    {
+      "iteracao": 4,
+      "erros": 4,
+      "acuracia": 94.5945945945946
+    },
+    {
+      "iteracao": 5,
+      "erros": 3,
+      "acuracia": 95.94594594594594
+    },
+    {
+      "iteracao": 6,
+      "erros": 5,
+      "acuracia": 93.24324324324324
+    },
+    {
+      "iteracao": 7,
+      "erros": 1,
+      "acuracia": 98.64864864864865
+    },
+    {
+      "iteracao": 8,
+      "erros": 2,
+      "acuracia": 97.2972972972973
+    },
+    {
+      "iteracao": 9,
+      "erros": 2,
+      "acuracia": 97.2972972972973
+    },
+    {
+      "iteracao": 10,
+      "erros": 2,
+      "acuracia": 97.2972972972973
+    },
+    {
+      "iteracao": 11,
+      "erros": 2,
+      "acuracia": 97.2972972972973
+    },
+    {
+      "iteracao": 12,
+      "erros": 2,
+      "acuracia": 97.2972972972973
+    },
+    {
+      "iteracao": 13,
+      "erros": 2,
+      "acuracia": 97.2972972972973
+    },
+    {
+      "iteracao": 14,
+      "erros": 2,
+      "acuracia": 97.2972972972973
+    },
+    {
+      "iteracao": 15,
+      "erros": 0,
+      "acuracia": 100.0
+    }
+  ],
+  "categorias_funcao": {
+    "1": "Impacto - Martelar pregos e objetos",
+    "2": "Fixação - Aparafusar e fixar componentes",
+    "3": "Corte - Cortar madeira e materiais",
+    "4": "Perfuração - Perfurar buracos em materiais",
+    "5": "Manipulação - Manipular e segurar objetos",
+    "6": "Movimento de Solo - Cavar e mover terra",
+    "7": "Escrita e Leitura - Escrever e marcar",
+    "8": "Medição e Fixação - Medir e alinhar objetos",
+    "9": "Outros - Outros usos diversos"
+  },
+  "pesos_modelo": {
+    "bias": -0.27941186781202126,
+    "pesos_caracteristicas": [
+      0.2740265596120255,
+      0.3190490930299622,
+      0.12029190539960584,
+      0.2687841751373792,
+      -0.0005874434071783396,
+      0.05167511966708563,
+      0.13703754634174567,
+      0.16368938752279016,
+      0.16623379778545347,
+      -0.036137575415572415,
+      0.01584812495334391,
+      -0.10348453453675857,
+      0.10112535252809393,
+      -0.5614891096338404
+    ]
+  }
+}
