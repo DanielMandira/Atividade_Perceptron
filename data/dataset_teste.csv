@@ -1,0 +1,11 @@
+nome_item,peso_gramas,dureza_escala_1_10,tamanho_cm,tem_cabo,material_metalico,preco_reais,cod_funcao,eh_ferramenta
+Parafusadeira,310,8,27,1,1,89.9,2,1
+Chave Estrela,140,7,16,1,1,19.8,2,1
+Machado Medio,480,9,33,1,1,134.5,3,1
+Martelo Pequeno,260,6,21,1,1,24.9,1,1
+Talhadeira,390,8,29,1,1,36.7,3,1
+Borracha Escolar,65,2,9,0,0,1.8,7,0
+Grampo Metal,95,3,11,0,1,0.15,5,0
+Caderno,170,1,19,0,0,18.5,7,0
+Caneta,130,4,13,0,0,3.2,7,0
+Algodao,75,2,7,0,0,4.5,9,0
